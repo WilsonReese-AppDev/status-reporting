@@ -24,6 +24,11 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.user = current_user
 
+    # the report period is based on the created_at date
+    # need to have current period be an enum or boolean for period - current, findby
+    current_period = Period.first
+    @report.period = current_period
+
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, notice: "Report was successfully created." }
