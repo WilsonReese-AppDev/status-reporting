@@ -1,0 +1,82 @@
+<%= form_with(model: report) do |form| %>
+  <% if report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+        <% report.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :period_id %>
+    <%= form.text_field :period_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_committees_rocks %>
+    <%= form.text_area :current_committees_rocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :future_committees_rocks %>
+    <%= form.text_area :future_committees_rocks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_internal_support %>
+    <%= form.text_area :current_internal_support %>
+  </div>
+
+  <div class="field">
+    <%= form.label :future_internal_support %>
+    <%= form.text_area :future_internal_support %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_projects %>
+    <%= form.text_area :current_projects %>
+  </div>
+
+  <div class="field">
+    <%= form.label :future_projects %>
+    <%= form.text_area :future_projects %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_other %>
+    <%= form.text_area :current_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :future_other %>
+    <%= form.text_area :future_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pto %>
+    <%= form.date_select :pto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pvt %>
+    <%= form.date_select :pvt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ooo %>
+    <%= form.date_select :ooo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
