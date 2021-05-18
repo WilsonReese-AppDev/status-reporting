@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: periods
+#
+#  id            :bigint           not null, primary key
+#  start         :datetime
+#  end           :datetime
+#  reports_count :integer          default(0)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+one:
+  start: 2021-05-18 00:51:36
+  end: 2021-05-18 00:51:36
+  reports_count: 1
+
+two:
+  start: 2021-05-18 00:51:36
+  end: 2021-05-18 00:51:36
+  reports_count: 1
