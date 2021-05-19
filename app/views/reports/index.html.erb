@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reports</h1>
+<h1>Status Reports</h1>
+<!--For the new report modal, we will need to strengthen the database
+    - We want to have the modal appear and have cancel, save, and submit options 
+    - To have it save, it will just create the record, but then TBD report.status will be "created"
+    - Report is automatically created each time it is a new period for anyone with bench_status == :on_bench -->
+<%= link_to 'New Report', new_report_path %>
 
 <div class="container">
   <div class="row">
@@ -16,25 +21,9 @@
   </div>
 
   <% current_user.reports.each do |report| %>
-    <div class="row">
-      <div class="col-md-3">
-        <%= report.user.email %>
-      </div>
-      <div class="col-md-3">
-        <%= report.period.start %>
-      </div>
-      <div class="col-md-3">
-        <%= report.period.end %>
-      </div>
-      <div class="col-md-3">
-        <%= link_to 'Show', report %>
-        <%= link_to 'Edit', edit_report_path(report) %>
-        <%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    </div>
+    <%= render report %>
   <% end %>
 </div>
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
