@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="row justify-content-center">
+    <h3>Key Priorities</h3>
+  </div>
+
+  <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :current_committees_rocks %>
+        <%= form.label :current_committees_rocks, "This Week's Committees/Rocks" %>
         <%= form.text_area :current_committees_rocks, class: "form-control" %>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :future_committees_rocks %>
+        <%= form.label :future_committees_rocks, "Next Week's Committees/Rocks" %>
         <%= form.text_area :future_committees_rocks, class: "form-control" %>
       </div>
     </div>
@@ -30,14 +34,14 @@
   <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :current_internal_support %>
+        <%= form.label :current_internal_support, "This Week's Internal Support" %>
         <%= form.text_area :current_internal_support, class: "form-control" %>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :future_internal_support %>
+        <%= form.label :future_internal_support, "Next Week's Internal Support" %>
         <%= form.text_area :future_internal_support, class: "form-control"%>
       </div>
     </div>
@@ -46,14 +50,14 @@
   <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :current_projects %>
+        <%= form.label :current_projects, "This Week's Projects" %>
         <%= form.text_area :current_projects, class: "form-control" %>      
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :future_projects %>
+        <%= form.label :future_projects, "Next Week's Projects" %>
         <%= form.text_area :future_projects, class: "form-control" %>
       </div>
     </div>
@@ -62,18 +66,41 @@
   <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :current_other %>
+        <%= form.label :current_other, "Other Activities This Week" %>
         <%= form.text_area :current_other, class: "form-control"  %>  
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :future_other %>
+        <%= form.label :future_other, "Other Activities Next Week" %>
         <%= form.text_area :future_other, class: "form-control" %>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4">
+          <%= form.label :pto %>
+          <%= form.text_field :pto, class: "form-control datetimepicker-input" %>
+          <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker4').datetimepicker({
+          format: 'L'
+        });
+      });
+    </script>
+  </div>
+
 
   <div class="field">
     <%= form.label :pto %>
