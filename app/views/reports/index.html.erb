@@ -1,11 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Status Reports</h1>
+<div class="row">
+  <div class="col-md-9">
+    <h1>Status Reports</h1>
+  </div>
+  <div class="col-md-3">
+    THIS IS WHERE BENCH TOGGLE WILL GO
+  </div>
+</div>
+
+<hr>
 <!--For the new report modal, we will need to strengthen the database
     - We want to have the modal appear and have cancel, save, and submit options 
     - To have it save, it will just create the record, but then TBD report.status will be "created"
     - Report is automatically created each time it is a new period for anyone with bench_status == :on_bench -->
-<%= link_to 'New Report', new_report_path %>
+<div class="container">
+  <div class="row">
+    <%= link_to 'New Report', new_report_path %>
+  </div>
+</div>
+
+<hr>
 
 <div class="container">
   <div class="row">
