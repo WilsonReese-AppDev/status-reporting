@@ -11,49 +11,73 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :current_committees_rocks %>
-    <%= form.text_area :current_committees_rocks %>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :current_committees_rocks %>
+        <%= form.text_area :current_committees_rocks, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :future_committees_rocks %>
+        <%= form.text_area :future_committees_rocks, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :future_committees_rocks %>
-    <%= form.text_area :future_committees_rocks %>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :current_internal_support %>
+        <%= form.text_area :current_internal_support, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :future_internal_support %>
+        <%= form.text_area :future_internal_support, class: "form-control"%>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :current_internal_support %>
-    <%= form.text_area :current_internal_support %>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :current_projects %>
+        <%= form.text_area :current_projects, class: "form-control" %>      
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :future_projects %>
+        <%= form.text_area :future_projects, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :future_internal_support %>
-    <%= form.text_area :future_internal_support %>
-  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :current_other %>
+        <%= form.text_area :current_other, class: "form-control"  %>  
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :current_projects %>
-    <%= form.text_area :current_projects %>
-  </div>
-
-  <div class="field">
-    <%= form.label :future_projects %>
-    <%= form.text_area :future_projects %>
-  </div>
-
-  <div class="field">
-    <%= form.label :current_other %>
-    <%= form.text_area :current_other %>
-  </div>
-
-  <div class="field">
-    <%= form.label :future_other %>
-    <%= form.text_area :future_other %>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :future_other %>
+        <%= form.text_area :future_other, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :pto %>
-    <%= form.date_select :pto %>
+    <%= form.date_select :pto%>
   </div>
 
   <div class="field">
@@ -70,3 +94,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
