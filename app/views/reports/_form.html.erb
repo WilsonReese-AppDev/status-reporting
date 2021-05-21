@@ -83,9 +83,8 @@
     <div class="col-md-4">
       <div class="form-group">
         <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4">
           <%= form.label :pto %>
-          <%= form.text_field :pto, class: "form-control datetimepicker-input" %>
+          <%= form.text_field :pto, class: "form-control datetimepicker-input", :data => { target: "#datetimepicker4" }  %>
           <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
@@ -101,25 +100,36 @@
     </script>
   </div>
 
-
-  <div class="field">
-    <%= form.label :pto %>
-    <%= form.date_select :pto%>
+<div class="row justify-content-center">
+  <div class="col-md-3">
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :pto %>
+        <%= form.date_field :pto %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :pvt %>
-    <%= form.date_select :pvt %>
+  <div class="col-md-3">
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :pvt %>
+        <%= form.date_field :pvt %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :ooo %>
-    <%= form.date_select :ooo %>
+  <div class="col-md-3">
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :ooo %>
+        <%= form.date_field :ooo %>
+      </div>
+    </div>
   </div>
+</div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
-
-
