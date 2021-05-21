@@ -16,14 +16,14 @@
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :current_committees_rocks, "This Week's Committees/Rocks" %>
         <%= form.text_area :current_committees_rocks, class: "form-control" %>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :future_committees_rocks, "Next Week's Committees/Rocks" %>
         <%= form.text_area :future_committees_rocks, class: "form-control" %>
@@ -32,14 +32,14 @@
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :current_internal_support, "This Week's Internal Support" %>
         <%= form.text_area :current_internal_support, class: "form-control" %>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :future_internal_support, "Next Week's Internal Support" %>
         <%= form.text_area :future_internal_support, class: "form-control"%>
@@ -48,14 +48,14 @@
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :current_projects, "This Week's Projects" %>
         <%= form.text_area :current_projects, class: "form-control" %>      
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :future_projects, "Next Week's Projects" %>
         <%= form.text_area :future_projects, class: "form-control" %>
@@ -64,14 +64,14 @@
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :current_other, "Other Activities This Week" %>
         <%= form.text_area :current_other, class: "form-control"  %>  
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :future_other, "Other Activities Next Week" %>
         <%= form.text_area :future_other, class: "form-control" %>
@@ -79,6 +79,36 @@
     </div>
   </div>
 
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :pto, "Upcoming PTO" %>
+          <%= form.date_field :pto %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :pvt, "Upcoming PVT"%>
+          <%= form.date_field :pvt %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :ooo, "Upcoming OOO" %>
+          <%= form.date_field :ooo %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- IF I WANT TO CHANGE THE DATEPICKER, THIS IS HOW I WOULD DO IT.
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
@@ -99,37 +129,13 @@
       });
     </script>
   </div>
+  --> 
 
-<div class="row justify-content-center">
-  <div class="col-md-3">
-    <div class="form-group">
-      <div class="field">
-        <%= form.label :pto %>
-        <%= form.date_field :pto %>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="actions">
+        <%= form.submit "Submit Report", class: "btn btn-primary btn-block" %>
       </div>
     </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <div class="field">
-        <%= form.label :pvt %>
-        <%= form.date_field :pvt %>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <div class="field">
-        <%= form.label :ooo %>
-        <%= form.date_field :ooo %>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
