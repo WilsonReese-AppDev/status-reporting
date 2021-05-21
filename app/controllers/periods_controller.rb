@@ -25,6 +25,7 @@ class PeriodsController < ApplicationController
 
     respond_to do |format|
       if @period.save
+        create_reports_for_bench_users(@period)
         format.html { redirect_to @period, notice: "Period was successfully created." }
         format.json { render :show, status: :created, location: @period }
       else
@@ -65,5 +66,15 @@ class PeriodsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def period_params
       params.require(:period).permit(:start, :end, :reports_count)
+    end
+
+    # Create reports for all bench users for a given period
+    def create_reports_for_bench_users(period)
+      User.bench_users.each do |user|
+        Report.create!(
+          user: user,
+          period: period
+        )
+      end
     end
 end
