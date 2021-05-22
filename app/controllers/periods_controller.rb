@@ -25,7 +25,6 @@ class PeriodsController < ApplicationController
 
     respond_to do |format|
       if @period.save
-        # create_reports_for_bench_users(@period)
         format.html { redirect_to @period, notice: "Period was successfully created." }
         format.json { render :show, status: :created, location: @period }
       else

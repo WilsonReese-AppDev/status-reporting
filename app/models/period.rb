@@ -18,11 +18,8 @@ class Period < ApplicationRecord
   private
       # Create reports for all bench users for a given period
     def create_reports_for_bench_users
-      User.bench_users.each do |user|
-        Report.create!(
-          user: user,
-          period: self
-        )
+      User.on_bench.each do |user|
+        user.reports.create!(period: self)
       end
     end
 end
