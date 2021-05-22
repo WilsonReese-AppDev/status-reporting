@@ -26,4 +26,6 @@ class User < ApplicationRecord
 
   has_many :reports, dependent: :destroy
   has_many :periods, through: :reports
+
+  scope :bench_users, -> { where(bench_status: :on_bench) }
 end
