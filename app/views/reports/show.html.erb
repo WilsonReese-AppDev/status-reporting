@@ -1,28 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @report.user_id %>
-</p>
-
-<p>
-  <strong>Period:</strong>
-  <%= @report.period_id %>
-</p>
-
-<p>
-  <strong>Current committees rocks:</strong>
-  <%= @report.current_committees_rocks %>
-</p>
-
-<p>
-  <strong>Future committees rocks:</strong>
-  <%= @report.future_committees_rocks %>
-</p>
-
-<p>
   <strong>Current internal support:</strong>
-  <%= @report.current_internal_support %>
 </p>
 
 <p>
@@ -67,3 +46,69 @@
 
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
+
+<div class="row justify-content-center mb-4">
+  <div class="col-md-6">
+    <strong>This Week's Committees/Rocks:</strong>
+    <%= @report.current_committees_rocks %>
+  </div>
+
+  <div class="col-md-6">
+    <strong>Next Week's Committees/Rocks:</strong>
+    <%= @report.future_committees_rocks %>
+  </div>
+</div>
+
+<div class="row justify-content-center mb-4">
+  <div class="col-md-6">
+    <strong>This Week's Internal Support:</strong>
+    <%= @report.current_internal_support %>
+  </div>
+
+  <div class="col-md-6">
+    <strong>Next Week's Internal Support:</strong>
+    <%= @report.future_internal_support %>
+  </div>
+</div>
+
+<div class="row justify-content-center mb-4">
+  <div class="col-md-6">
+    <strong>This Week's Projects:</strong>
+    <%= @report.current_projects %>
+  </div>
+
+  <div class="col-md-6">
+    <strong>Next Week's Projects:</strong>
+    <%= @report.future_projects %>
+  </div>
+</div>
+
+<div class="row justify-content-center mb-4">
+  <div class="col-md-6">
+    <strong>Other Activities This Week:</strong>
+    <%= @report.current_other %>
+  </div>
+
+  <div class="col-md-6">
+    <strong>Other Activities Next Week:</strong>
+    <%= @report.future_other %>
+  </div>
+</div>
+
+<div class="row justify-content-center mb-4">
+  <div class="col-md-3">
+    <strong>Upcoming PTO:</strong>
+    <%= @report.pto %>
+  </div>
+
+  <div class="col-md-3">
+    <strong>Upcoming PVT:</strong>
+    <%= @report.pvt %>
+  </div>
+
+  <div class="col-md-3">
+    <strong>Upcoming OOO:</strong>
+    <%= @report.ooo %>
+  </div>
+</div>
+
