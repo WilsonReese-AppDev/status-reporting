@@ -1,53 +1,52 @@
-<p id="notice"><%= notice %></p>
-
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>This Week's Committees/Rocks:</strong>
-    <%= @report.current_committees_rocks ? (@report.current_committees_rocks) : ("N/A") %>
+    <%= @report.current_committees_rocks != "" ? (@report.current_committees_rocks) : ("N/A") %>
+
   </div>
 
   <div class="col-md-6">
     <strong>Next Week's Committees/Rocks:</strong>
-    <%= @report.future_committees_rocks ? (@report.future_committees_rocks) : ("N/A") %>
+    <%= @report.future_committees_rocks != "" ? (@report.future_committees_rocks) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>This Week's Internal Support:</strong>
-    <%= @report.current_internal_support ? (@report.current_internal_support) : ("N/A") %>
+    <%= @report.current_internal_support != "" ? (@report.current_internal_support) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Next Week's Internal Support:</strong>
-    <%= @report.future_internal_support ? (@report.future_internal_support) : ("N/A") %>
+    <%= @report.future_internal_support != "" ? (@report.future_internal_support) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>This Week's Projects:</strong>
-    <%= @report.current_projects ? (@report.current_projects) : ("N/A") %>
+    <%= @report.current_projects != "" ? (@report.current_projects) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Next Week's Projects:</strong>
-    <%= @report.future_projects ? (@report. future_projects) : ("N/A") %>
+    <%= @report.future_projects != "" ? (@report. future_projects) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>Other Activities This Week:</strong>
-    <%= @report.current_other ? (@report.current_other) : ("N/A") %>
+    <%= @report.current_other != "" ? (@report.current_other) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Other Activities Next Week:</strong>
-    <%= @report.future_other ? (@report.future_other) : ("N/A") %>
+    <%= @report.future_other != "" ? (@report.future_other) : ("N/A") %>
   </div>
 </div>
 
