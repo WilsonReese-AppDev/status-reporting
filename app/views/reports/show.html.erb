@@ -6,65 +6,65 @@
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>This Week's Committees/Rocks:</strong>
-    <%= @report.current_committees_rocks %>
+    <%= @report.current_committees_rocks ? (@report.current_committees_rocks) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Next Week's Committees/Rocks:</strong>
-    <%= @report.future_committees_rocks %>
+    <%= @report.future_committees_rocks ? (@report.future_committees_rocks) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>This Week's Internal Support:</strong>
-    <%= @report.current_internal_support %>
+    <%= @report.current_internal_support ? (@report.current_internal_support) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Next Week's Internal Support:</strong>
-    <%= @report.future_internal_support %>
+    <%= @report.future_internal_support ? (@report.future_internal_support) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>This Week's Projects:</strong>
-    <%= @report.current_projects %>
+    <%= @report.current_projects ? (@report.current_projects) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Next Week's Projects:</strong>
-    <%= @report.future_projects %>
+    <%= @report.future_projects ? (@report. future_projects) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-6">
     <strong>Other Activities This Week:</strong>
-    <%= @report.current_other %>
+    <%= @report.current_other ? (@report.current_other) : ("N/A") %>
   </div>
 
   <div class="col-md-6">
     <strong>Other Activities Next Week:</strong>
-    <%= @report.future_other %>
+    <%= @report.future_other ? (@report.future_other) : ("N/A") %>
   </div>
 </div>
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-3">
     <strong>Upcoming PTO:</strong>
-    <%= @report.pto.strftime("%B %e, %Y") %>
+    <%= @report.pto ? (@report.pto.strftime("%B %e, %Y")) : ("N/A") %>
   </div>
 
   <div class="col-md-3">
     <strong>Upcoming PVT:</strong>
-    <%= @report.pvt.strftime("%B %e, %Y") %>
+    <%= @report.pvt ? (@report.pvt.strftime("%B %e, %Y")) : ("N/A") %>
   </div>
 
   <div class="col-md-3">
     <strong>Upcoming OOO:</strong>
-    <%= @report.ooo.strftime("%B %e, %Y") %>
+    <%= @report.ooo ? (@report.ooo.strftime("%B %e, %Y")) : ("N/A") %>
   </div>
 </div>
 
