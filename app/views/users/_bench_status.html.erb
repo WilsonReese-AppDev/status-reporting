@@ -2,7 +2,11 @@
   <strong>Current Bench Status</strong>
   <div>
     <%= link_to edit_user_path(user), remote: true do %>
-      <%= user.bench_status %></p>
+      <% if user.bench_status == "on_bench" %>
+        On Bench
+      <% else %>
+        Off Bench
+      <% end %>
     <% end %>
   </div>
 </div>

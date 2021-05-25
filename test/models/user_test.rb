@@ -8,8 +8,8 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  bench_status           :integer          default(0)
-#  user_type              :integer          default(1)
+#  bench_status           :string           default("off_bench")
+#  user_type              :integer          default("standard")
 #  reports_count          :integer          default(0)
 #  name                   :string
 #  created_at             :datetime         not null
