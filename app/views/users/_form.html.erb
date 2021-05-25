@@ -1,9 +1,8 @@
-<%= form_with(model: user) do |form| %>
+<%= form_with(model: user, local: false) do |form| %>
 
   <div>
     <%= form.label :bench_status, class: "sr-only" %>
-    <%= form.select :bench_status, [["On Bench", :on_bench], ["Off Bench", :off_bench]], {}, onchange: 'Rails.fire(this.form, "submit")', class: "form-select" %>
+    <%= form.select :bench_status, [["On Bench", :on_bench], ["Off Bench", :off_bench]], {}, class: "custom-select", onchange: "Rails.fire(this.form, 'submit')" %>
 
-    <%= form.submit class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>
