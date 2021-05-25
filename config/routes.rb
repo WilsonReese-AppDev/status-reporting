@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :periods
   resources :reports
 
-  get "users/:id/bench_status/edit" => "users#edit_bench_status", as: :edit_bench_status
+  get "users/:id/edit" => "users#edit", as: :edit_user
+  patch "users/:id" => "users#update", as: :user
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

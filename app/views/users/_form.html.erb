@@ -1,6 +1,8 @@
-<%= form_with(url: "edit_bench_status") do |form| %>
+<%= form_with(model: user) do |form| %>
 
   <%= form.label :bench_status %>
-  <%= form.select :bench_status, [["On Bench", 0], ["Off Bench", 1]]  %>
+  <%= form.select :bench_status, [["On Bench", :on_bench], ["Off Bench", :off_bench]]  %>
+
+  <%= form.submit %>
 
 <% end %>
