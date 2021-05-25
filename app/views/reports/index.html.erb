@@ -20,8 +20,11 @@
   </div>
 </div>
 
-<% if Period.current_period %>
-  <%=  %>
+
+<% current_user.reports.each do |report| %>
+  <% if report.period.current? %>
+    <%= report %>
+  <% end %>
 <% end %>
 
 <hr>
@@ -40,7 +43,7 @@
   </div>
 
   <% current_user.reports.each do |report| %>
-    <%= render report %>
+    <%= render "reports/report_row", report: report %>
   <% end %>
 </div>
 
