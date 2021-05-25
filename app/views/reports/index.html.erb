@@ -3,10 +3,7 @@
     <h1>Status Reports</h1>
   </div>
   <div class="col-md-3 align-self-center">
-    <div>
-      Current Bench Status: <%= current_user.bench_status %>
-      <%= render "users/form", user: current_user %>
-    </div>
+    <%= render "users/bench_status", user: current_user %>
   </div>
 </div>
 
