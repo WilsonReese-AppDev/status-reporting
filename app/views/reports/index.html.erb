@@ -8,13 +8,9 @@
 </div>
 
 <hr>
-
+<!-- map -->
 <div class="container">
-  <% current_user.reports.each do |report| %>
-    <% if report.period.current? %>
-      <%= render report %>
-    <% end %>
-  <% end %>
+  <%= render "reports/report", report: current_user.reports.current_report.first %>
 </div>
 
 <hr>
