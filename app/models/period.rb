@@ -8,6 +8,7 @@
 #  reports_count :integer          default(0)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  current       :boolean          default(FALSE)
 #
 class Period < ApplicationRecord
   has_many :reports, dependent: :destroy
