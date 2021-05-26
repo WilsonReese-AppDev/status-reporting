@@ -26,13 +26,9 @@ class User < ApplicationRecord
 
   has_many :reports, dependent: :destroy
   has_many :periods, through: :reports
-  # has_many :current_reports, -> { joins(:period).find_by(periods: {current: true}) }, foreign_key: :user_id, class_name: "Report"
-  # has_many :accepted_received_follow_requests, -> { accepted }, foreign_key: :recipient_id, class_name: "FollowRequest"
-  
-  # scope :current_repor, -> { joins(:period).where(periods: {current: true}) }
-  # private
-    def current_report
-      current_report = Report.joins(:period).where(periods: {current: true})
-      return current_report
-    end
+
+  def current_report
+    current_report = Report.joins(:period).where(periods: {current: true})
+    return current_report
+  end
 end
