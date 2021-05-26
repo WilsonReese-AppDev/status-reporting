@@ -1,12 +1,10 @@
 <div class="row">
   <div class="col-md-3">
-    <%= report.user.email %>
-  </div>
-  <div class="col-md-3">
-    <%= report.period.start.strftime("%B %e, %Y") %>
-  </div>
-  <div class="col-md-3">
-    <%= report.period.end.strftime("%B %e, %Y") %>
+    <% if report.period.current %>
+      <strong>Week of <%= report.period.start.strftime("%B %e, %Y") %></strong>
+    <% else %>
+      Week of <%= report.period.start.strftime("%B %e, %Y") %>
+    <% end%>
   </div>
   <div class="col-md-3">
     <%= link_to 'Show', report %>
