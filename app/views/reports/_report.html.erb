@@ -1,16 +1,115 @@
-<div class="row">
-  <div class="col-md-3">
-    <%= report.user.email %>
+<div id="current_report"> 
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div>
+        <strong>This Week's Committees/Rocks:</strong>
+      </div>
+      <div>
+        <%= report.current_committees_rocks == (nil || "") ? ("N/A") : (report.current_committees_rocks) %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <strong>Next Week's Committees/Rocks:</strong>
+      </div>
+      <div>
+          </div><%= report.future_committees_rocks == (nil || "") ? ("N/A") : 
+        (report.future_committees_rocks) %>
+    </div>
   </div>
-  <div class="col-md-3">
-    <%= report.period.start.strftime("%B %e, %Y") %>
+
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div>
+        <strong>This Week's Internal Support:</strong>
+      </div>
+      <div>
+          </div><%= report.current_internal_support == (nil || "") ? ("N/A") : 
+        (report.current_internal_support) %>
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <strong>Next Week's Internal Support:</strong>
+      </div>
+      <div>
+          </div><%= report.future_internal_support == (nil || "") ? ("N/A") : 
+        (report.future_internal_support) %>
+    </div>
   </div>
-  <div class="col-md-3">
-    <%= report.period.end.strftime("%B %e, %Y") %>
+
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div>
+        <strong>This Week's Projects:</strong>
+      </div>
+      <div>
+        <%= report.current_projects == (nil || "") ? ("N/A") : (report.current_projects) %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <strong>Next Week's Projects:</strong>
+      </div>
+      <div>
+        <%= report.future_projects == (nil || "") ? ("N/A") : (report.future_projects) %>
+      </div>
+    </div>
   </div>
-  <div class="col-md-3">
-    <%= link_to 'Show', report %>
-    <%= link_to 'Edit', edit_report_path(report) %>
-    <%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div>
+        <strong>Other Activities This Week:</strong>
+      </div>
+      <div>
+        <%= report.current_other == (nil || "") ? ("N/A") : (report.current_other) %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <strong>Other Activities Next Week:</strong>
+      </div>
+      <div>
+        <%= report.future_other == (nil || "") ? ("N/A") : (report.future_other) %>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-3">
+      <div>
+        <strong>Upcoming PTO:</strong>
+      </div>
+      <div>
+        <%= report.pto ? (report.pto.strftime("%B %e, %Y")) : ("N/A") %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div>
+        <strong>Upcoming PVT:</strong>
+      </div>
+      <div>
+        <%= report.pvt ? (report.pvt.strftime("%B %e, %Y")) : ("N/A") %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div>
+        <strong>Upcoming OOO:</strong>
+      </div>
+      <div>
+        <%= report.ooo ? (report.ooo.strftime("%B %e, %Y")) : ("N/A") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class ="col-md-4">
+      <%= button_to "Edit Report", edit_report_path(report), class: "btn btn-primary btn-block", method: :get, remote: true %>
+    </div>
+  </div>

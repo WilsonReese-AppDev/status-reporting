@@ -8,12 +8,15 @@
 #  reports_count :integer          default(0)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  current       :boolean          default(FALSE)
 #
 class Period < ApplicationRecord
   has_many :reports, dependent: :destroy
   has_many :users, through: :reports
 
   after_create :create_reports_for_bench_users
+
+  scope :current_period, -> { where( current: true ) }
 
   private
       # Create reports for all bench users for a given period

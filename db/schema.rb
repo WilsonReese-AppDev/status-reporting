@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_005421) do
+ActiveRecord::Schema.define(version: 2021_05_25_182100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_005421) do
     t.integer "reports_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "current", default: false
   end
 
   create_table "reports", force: :cascade do |t|
@@ -49,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_005421) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "bench_status", default: 0
+    t.string "bench_status", default: "Off Bench"
     t.integer "user_type", default: 1
     t.integer "reports_count", default: 0
     t.string "name"

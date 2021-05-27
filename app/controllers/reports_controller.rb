@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[ show edit update destroy ]
-  before_action :ensure_report_belongs_to_current_user, only: %i[ show edit update destroy ]
+  before_action :set_report, only: %i[ show edit update destroy edit_report ]
+  before_action :ensure_report_belongs_to_current_user, only: %i[ show edit update destroy edit_report ]
 
   # GET /reports or /reports.json
   def index
@@ -47,6 +47,7 @@ class ReportsController < ApplicationController
       if @report.update(report_params)
         format.html { redirect_to @report, notice: "Report was successfully updated." }
         format.json { render :show, status: :ok, location: @report }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @report.errors, status: :unprocessable_entity }

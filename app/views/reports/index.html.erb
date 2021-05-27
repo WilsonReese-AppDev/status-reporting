@@ -7,18 +7,14 @@
   </div>
 </div>
 
-<%= current_user.id %>
-<%= current_user.bench_status %>
-
 <hr>
-<!--For the new report modal, we will need to strengthen the database
-    - We want to have the modal appear and have cancel, save, and submit options 
-    - To have it save, it will just create the record, but then TBD report.status will be "created"
-    - Report is automatically created each time it is a new period for anyone with bench_status == :on_bench -->
+
 <div class="container">
-  <div class="row">
-    <%= link_to 'New Report', new_report_path %>
-  </div>
+  <% current_user.reports.each do |report| %>
+    <% if report.period.current? %>
+      <%= render report %>
+    <% end %>
+  <% end %>
 </div>
 
 <hr>
@@ -37,9 +33,8 @@
   </div>
 
   <% current_user.reports.each do |report| %>
-    <%= render report %>
+    <%= render "reports/report_row", report: report %>
   <% end %>
 </div>
 
 <br>
-

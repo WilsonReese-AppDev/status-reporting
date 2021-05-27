@@ -64,6 +64,6 @@ class PeriodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def period_params
-      params.require(:period).permit(:start, :end, :reports_count)
+      params.require(:period).permit(:start, :end, :reports_count, :current)
     end
 end
