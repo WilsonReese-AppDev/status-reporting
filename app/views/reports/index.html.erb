@@ -8,11 +8,9 @@
 </div>
 
 <hr>
-<!-- map -->
-<%= current_user.current_report %>
 
 <div class="container">
-  <%= render "reports/report", report: current_user.reports.current_report.first %>
+  <%= render "reports/report", report: current_user.current_report %>
 </div>
 
 <hr>
