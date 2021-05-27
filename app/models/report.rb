@@ -25,4 +25,6 @@ class Report < ApplicationRecord
 
   validates :user_id, presence: true
   validates :period_id, presence: true
+
+  scope :current_report, -> { joins(:period).where(periods: {current: true}) }
 end

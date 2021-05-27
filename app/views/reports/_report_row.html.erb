@@ -1,16 +1,8 @@
 <div class="row">
   <div class="col-md-3">
-    <%= report.user.email %>
+    Week of <%= report.period.start.strftime("%B %e, %Y") %>
   </div>
   <div class="col-md-3">
-    <%= report.period.start.strftime("%B %e, %Y") %>
-  </div>
-  <div class="col-md-3">
-    <%= report.period.end.strftime("%B %e, %Y") %>
-  </div>
-  <div class="col-md-3">
-    <%= link_to 'Show', report %>
-    <%= link_to 'Edit', edit_report_path(report) %>
-    <%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'View', report %>
   </div>
 </div>

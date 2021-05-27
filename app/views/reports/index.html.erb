@@ -8,32 +8,24 @@
 </div>
 
 <hr>
+<!-- map -->
+<%= current_user.current_report %>
 
 <div class="container">
-  <% current_user.reports.each do |report| %>
-    <% if report.period.current? %>
-      <%= render report %>
-    <% end %>
-  <% end %>
+  <%= render "reports/report", report: current_user.reports.current_report.first %>
 </div>
 
 <hr>
 
+
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      User
-    </div>
-    <div class="col-md-3">
-      Period Start Date
-    </div>
-    <div class="col-md-3">
-      Period End Date
-    </div>
+    <h2>Previous Reports</h2>
   </div>
-
   <% current_user.reports.each do |report| %>
-    <%= render "reports/report_row", report: report %>
+    <% if !report.period.current %>
+      <%= render "reports/report_row", report: report %>
+    <% end %>
   <% end %>
 </div>
 

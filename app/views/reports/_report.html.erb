@@ -108,8 +108,11 @@
     </div>
   </div>
 
-  <div class="row justify-content-center">
-    <div class ="col-md-4">
-      <%= button_to "Edit Report", edit_report_path(report), class: "btn btn-primary btn-block", method: :get, remote: true %>
+  <% if report.period.current %>
+    <div class="row justify-content-center">
+      <div class ="col-md-4">
+        <%= button_to "Edit Report", edit_report_path(report), class: "btn btn-primary btn-block", method: :get, remote: true %>
+      </div>
     </div>
-  </div>
+  <% end %>
+</div>

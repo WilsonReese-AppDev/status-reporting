@@ -26,4 +26,9 @@ class User < ApplicationRecord
 
   has_many :reports, dependent: :destroy
   has_many :periods, through: :reports
+
+  def current_report
+    current_report = Report.joins(:period).where(periods: {current: true})
+    return current_report
+  end
 end
