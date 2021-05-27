@@ -1,0 +1,9 @@
+<div id="bench_status_form">
+  <%= form_with(model: user, local: false) do |form| %>
+
+    <div>
+      <%= form.label :bench_status, class: "sr-only" %>
+      <%= form.select :bench_status, [["On Bench", :on_bench], ["Off Bench", :off_bench]], {}, class: "custom-select", onchange: "Rails.fire(this.form, 'submit')" %>
+    </div>
+  <% end %>
+</div>

@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<div class="row">
-  <div class="col-md-9">
+<div class="row justify-content-between">
+  <div class="col-md-4">
     <h1>Status Reports</h1>
   </div>
-  <div class="col-md-3">
-    THIS IS WHERE BENCH TOGGLE WILL GO
+  <div class="col-md-3 align-self-center">
+    <%= render "users/bench_status", user: current_user %>
   </div>
 </div>
+
+<%= current_user.id %>
+<%= current_user.bench_status %>
 
 <hr>
 <!--For the new report modal, we will need to strengthen the database

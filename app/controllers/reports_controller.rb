@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
+  before_action :ensure_report_belongs_to_current_user, only: %i[ show edit update destroy ]
 
   # GET /reports or /reports.json
   def index
@@ -72,4 +73,10 @@ class ReportsController < ApplicationController
     def report_params
       params.require(:report).permit(:user_id, :period_id, :current_committees_rocks, :future_committees_rocks, :current_internal_support, :future_internal_support, :current_projects, :future_projects, :current_other, :future_other, :pto, :pvt, :ooo)
     end
+
+  def ensure_report_belongs_to_current_user
+    if current_user != @report.user
+      redirect_back fallback_location: root_url, alert: "You're not authorized for that."
+    end
+  end
 end
