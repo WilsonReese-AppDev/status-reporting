@@ -23,8 +23,5 @@ class Report < ApplicationRecord
   belongs_to :user, counter_cache: true
   belongs_to :period, counter_cache: true
 
-  validates :user_id, presence: true
-  validates :period_id, presence: true
-
   scope :current_report, -> { joins(:period).where(periods: {current: true}) }
 end
