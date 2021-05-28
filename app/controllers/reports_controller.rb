@@ -9,6 +9,11 @@ class ReportsController < ApplicationController
 
   # GET /reports/1 or /reports/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.js
+    end
   end
 
   # GET /reports/new
