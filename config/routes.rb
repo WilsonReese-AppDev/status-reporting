@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  resources :periods
-  resources :reports
+  # resources :periods     #commenting this out because I might use it later
+  resources :reports, except: [:new]
 
   get "reports/:id/hide" => "reports#hide", as: :hide_report
 

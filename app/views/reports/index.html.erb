@@ -9,22 +9,29 @@
 
 <hr>
 
-<div class="container">
-  <%= render "reports/report", report: current_user.current_report %>
-</div>
+<%= current_user.id %>
+
+<% if current_user.current_report %>
+  <div class="container">
+    <%= render "reports/report", report: current_user.current_report %>
+  </div>
+<% else %>
+  <h5>You currently do not have a report to submit.</h5>
+<% end %>
 
 <hr>
 
-
-<div class="container">
-  <div class="row">
-    <h2>Previous Reports</h2>
-  </div>
-  <% current_user.reports.each do |report| %>
-    <% if !report.period.current %>
-      <%= render "reports/report_row", report: report %>
+<% if !current_user.reports.empty? %>
+  <div class="container">
+    <div class="row">
+      <h2>Previous Reports</h2>
+    </div>
+    <% current_user.reports.each do |report| %>
+      <% if !report.period.current %>
+        <%= render "reports/report_row", report: report %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <br>
