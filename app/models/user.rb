@@ -28,7 +28,6 @@ class User < ApplicationRecord
   has_many :periods, through: :reports
 
   def current_report
-    current_report = Report.joins(:period).where(periods: {current: true})
-    return current_report
+    return reports.current_report.first
   end
 end
