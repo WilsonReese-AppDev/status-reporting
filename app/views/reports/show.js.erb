@@ -1,3 +1,4 @@
-$("#<%= dom_id(@report)%>_view_link").replaceWith("THIS");
+$("#<%= dom_id(@report)%>_view_link").replaceWith("<%= j(render "reports/report", report: @report)%>");
+
 
 console.log("show.js.erb")
