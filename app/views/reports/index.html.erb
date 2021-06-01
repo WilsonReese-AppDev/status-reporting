@@ -19,7 +19,7 @@
 
 <hr>
 
-<% if !current_user.reports.empty? %>
+<% if current_user.reports.count > 1 %>
   <div class="container">
     <div class="row">
       <h2>Previous Reports</h2>
