@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :periods
   resources :reports
 
+  get "reports/:id/hide" => "reports#hide", as: :hide_report
+
   get "users/:id/edit" => "users#edit", as: :edit_user
   patch "users/:id" => "users#update", as: :user
 

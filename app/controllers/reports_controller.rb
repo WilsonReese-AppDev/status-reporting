@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[ show edit update destroy edit_report ]
+  before_action :set_report, only: %i[ show edit update destroy hide ]
   before_action :ensure_report_belongs_to_current_user, only: %i[ show edit update destroy edit_report ]
 
   # GET /reports or /reports.json
@@ -9,6 +9,10 @@ class ReportsController < ApplicationController
 
   # GET /reports/1 or /reports/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /reports/new

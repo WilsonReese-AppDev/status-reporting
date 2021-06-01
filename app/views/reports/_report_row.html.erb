@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row" id="<%= dom_id(report) %>_row">
   <div class="col-md-3">
     Week of <%= report.period.start.strftime("%B %e, %Y") %>
   </div>
   <div class="col-md-3">
-    <%= link_to 'View', report %>
+    <%= link_to 'View', report, remote: true %>
   </div>
 </div>

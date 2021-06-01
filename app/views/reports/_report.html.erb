@@ -1,4 +1,7 @@
-<div id="current_report"> 
+<div id="<%=dom_id(report)%>"> 
+  <div class="row">
+    <h4>Week of <%= report.period.start.strftime("%B %e, %Y") %></h4>
+  </div>
   <div class="row justify-content-center mb-4">
     <div class="col-md-6">
       <div>
@@ -113,6 +116,10 @@
       <div class ="col-md-4">
         <%= button_to "Edit Report", edit_report_path(report), class: "btn btn-primary btn-block", method: :get, remote: true %>
       </div>
+    </div>
+  <% else %>
+    <div class="row justify-content-center">
+      <%= link_to "Hide", hide_report_path(report), remote: true %>
     </div>
   <% end %>
 </div>
