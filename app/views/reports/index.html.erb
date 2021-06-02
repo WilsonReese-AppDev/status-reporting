@@ -9,8 +9,6 @@
 
 <hr>
 
-<%= current_user.id %>
-
 <% if current_user.current_report %>
   <div class="container">
     <%= render "reports/report", report: current_user.current_report %>
@@ -21,7 +19,7 @@
 
 <hr>
 
-<% if !current_user.reports.empty? %>
+<% if current_user.reports.count > 1 %>
   <div class="container">
     <div class="row">
       <h2>Previous Reports</h2>
