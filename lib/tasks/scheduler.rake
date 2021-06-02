@@ -6,7 +6,7 @@ task :create_period => :environment do
 
   new_period = Period.create(
     start: DateTime.now,
-    end: DateTime.now + 7.days,
+    end: 7.days.from_now,
     current: true
   )
 end
