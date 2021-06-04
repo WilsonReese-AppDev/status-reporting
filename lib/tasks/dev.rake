@@ -2,27 +2,44 @@ task sample_data: :environment do
   starting = Time.now
   
   if Rails.env.development?
+    Report.delete_all
+    Period.delete_all
     User.delete_all
   end
 
-  people = Array.new(7) do
-    {
-      name: Faker::Name.first_name,
-    }
-  end
+  alice = User.create(
+    email: "alice@example.com",
+    password: "password",
+    name: "Alice",
+    bench_status: "on_bench"
+  )
 
-  people << { name: "Alice" }
-  people << { name: "Bob" }
-  people << { name: "Carol" }
+  bob = User.create(
+    email: "bob@example.com",
+    password: "password",
+    name: "Bob",
+    bench_status: "on_bench"
+  )
 
-  people.each do |person|
-    username = person.fetch(:name).downcase
+  carol = User.create(
+    email: "carol@example.com",
+    password: "password",
+    name: "Carol"
+  )
 
-    user = User.create(
-      email: "#{username}@example.com",
-      password: "password",
-      name: "#{person[:name]}",
-    )
-  end
+  old_period = Period.create(
+    start: DateTime.new(2021, 5, 24, 4),
+    end: DateTime.new(2021, 5, 31, 4),
+    current: false
+  )
+  
+  new_period = Period.create(
+    start: DateTime.new(2021, 5, 31, 4),
+    end: DateTime.new(2021, 6, 7, 4),
+    current: true
+  )
+
   p "#{User.all.count} users were created."
+  p "#{Period.all.count} period(s) were created."
+  p "#{Report.all.count} report(s) were created."
 end
